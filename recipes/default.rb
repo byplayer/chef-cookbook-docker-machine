@@ -3,13 +3,14 @@
 # Recipe:: default
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
-def install_url
+def get_install_url
   release = node['docker-machine']['release']
   kernel_name = node['kernel']['name']
   machine_hw_name = node['kernel']['machine']
   "https://github.com/docker/machine/releases/download/v#{release}/docker-machine-#{kernel_name}-#{machine_hw_name}"
 end
 
+install_url = get_install_url
 command_path = node['docker-machine']['command_path']
 
 execute 'install docker-machine' do
