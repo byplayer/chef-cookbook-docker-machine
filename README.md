@@ -1,4 +1,4 @@
 # docker-machine
 
-TODO: Enter the cookbook description here.
+install docker-machine
 
