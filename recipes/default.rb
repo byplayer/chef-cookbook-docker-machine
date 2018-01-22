@@ -19,5 +19,5 @@ execute 'install docker-machine' do
   user 'root'
   group 'docker'
   umask '0027'
-  not_if "#{command_path} --version | grep #{node['kdocker-machine']['release']}"
+  not_if "#{command_path} --version | grep #{node['docker-machine']['release']}"
 end
