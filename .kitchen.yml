@@ -9,6 +9,10 @@ provisioner:
 platforms:
   - name: ubuntu-16.04
   - name: centos-7.2
+  - name: centos-6.3
+
+verifier:
+  name: inspec
 
 suites:
   - name: default

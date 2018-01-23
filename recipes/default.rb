@@ -3,6 +3,15 @@
 # Recipe:: default
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
+group node['docker-machine']['group'] do
+  group_name node['docker-machine']['group']
+  action     [:create]
+end
+
+package 'curl' do
+  action :install
+end
+
 def get_install_url
   release = node['docker-machine']['release']
   kernel_name = node['kernel']['name']
@@ -17,7 +26,7 @@ execute 'install docker-machine' do
   action :run
   command "curl -sSL #{install_url} > #{command_path} && chmod +x #{command_path}"
   user 'root'
-  group 'docker'
+  group node['docker-machine']['group']
   umask '0027'
   not_if "#{command_path} --version | grep #{node['docker-machine']['release']}"
 end
