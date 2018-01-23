@@ -1,0 +1,12 @@
+source 'https://rubygems.org'
+gem 'berkshelf' , '~> 2.0.0'
+gem 'minitest-chef-handler'
+gem 'test-kitchen'
+gem 'chef'
+gem 'chef-zero'
+gem 'lxc-awesome-ephemeral', :git => 'https://github.com/portertech/lxc-awesome-ephemeral.git'
+gem 'kitchen-lxc'
+gem 'kitchen-vagrant', :group => :integration
+gem 'faraday_middleware'
+gem 'kitchen-docker'
+gem 'nokogiri'
